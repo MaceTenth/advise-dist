@@ -1,0 +1,20 @@
+tg client — proprietary license (draft, for review by counsel before first public release)
+
+Copyright (c) 2026 Loyaltie. All rights reserved.
+
+1. Grant. Loyaltie grants you a personal, non-exclusive, non-transferable, revocable license to install and run the
+   distributed `tg` client binaries and the `tg-memory` launcher ("the Software") for the purpose of connecting to a
+   tg memory service that you or your organization are authorized to use.
+2. Restrictions. You may not copy (except as needed to run it), modify, translate, reverse engineer, decompile,
+   disassemble, or create derivative works of the Software; redistribute, sell, rent, or sublicense it; or remove any
+   proprietary notices. The source code of the Software is not licensed and is not provided.
+3. Data. What the Software sends to the memory service, and how it is stored, is described in the accompanying
+   documentation. You are responsible for enabling contribution (`tg contribute on`) only for data you are permitted
+   to share with your team.
+4. No warranty. The Software is provided "as is", without warranty of any kind. To the maximum extent permitted by
+   law, Loyaltie disclaims all warranties and shall not be liable for any damages arising from its use.
+5. Termination. This license ends automatically if you breach it; on termination you must stop using and delete the
+   Software.
+
+Third-party components bundled in the binaries (the Python runtime and standard library) remain under their own
+licenses, which are included in the distribution.
