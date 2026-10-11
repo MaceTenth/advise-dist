@@ -1,11 +1,13 @@
 # Installing advise for a teammate
 
+> Step-by-step for new users, including what to expect in the first sessions and the dashboard: [USER-GUIDE.md](USER-GUIDE.md).
+
 advise turns finished Claude Code sessions into shared memory: when a session ends it is condensed, redacted and pushed
 to the team's cloud; the next session starts with a brief of what the team learned in that project, and (optionally)
 gets prior fixes injected when a command fails. Ten minutes, five commands.
 
 ## What you need
-- macOS or Linux, Claude Code, Node 18+ (for `npx`), and a GitHub account. Python is only needed for the from-source route.
+- macOS, Linux or Windows, Claude Code, Node 18+ (for `npx`), and a GitHub account. Python is only needed for the from-source route.
 - A beta seat: the operator approves GitHub logins (`advise admin approve --login <you>`). If you sign up before that,
   your request is recorded and `advise signup` succeeds once you are approved.
 - Joining an existing team instead: a one-time **invite code** from the team owner (`advise admin invite`), then step 2b.
@@ -17,7 +19,7 @@ gets prior fixes injected when a command fails. Ten minutes, five commands.
 npx advise-cli@latest doctor        # first run downloads the prebuilt binary for your platform (~9 MB), verifies its checksum, caches it in ~/.advise/bin
 alias advise='npx advise-cli'           # or: npm i -g advise-cli
 ```
-Prebuilt for macOS (Apple Silicon and Intel) and Linux (x64 and arm64). The binary contains no source; the source
+Prebuilt for macOS (Apple Silicon and Intel), Linux (x64 and arm64) and Windows (x64). The binary contains no source; the source
 repository stays private.
 
 **From source (needs Python 3.11+ and access to the private repository):**

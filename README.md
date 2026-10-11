@@ -11,3 +11,5 @@ Then follow the [installation guide](https://github.com/MaceTenth/advise-dist/bl
 
 Proprietary software; see LICENSE. Only condensed, redacted session text ever leaves your machine, and nothing is
 pushed until you run `advise contribute on`.
+
+New here? Read the step-by-step [user guide](USER-GUIDE.md).
