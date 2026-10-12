@@ -168,6 +168,8 @@ Full statement: <https://daat-mind.com/advise/privacy>.
 
 ## Troubleshooting
 
+Found something broken? `npx advise-cli report` prints a bundle with everything a report needs and nothing private; send it to the operator, or to <https://github.com/MaceTenth/advise-dist/issues>.
+
 | symptom | cause and fix |
 |---|---|
 | `npx advise-cli` says "could not determine executable" | a stale npm cache during a release; run again |
@@ -176,7 +178,7 @@ Full statement: <https://daat-mind.com/advise/privacy>.
 | `0 episodes to push` | the session was short or had no tool work; see step 4 |
 | briefs never appear | first session in a project has no brief yet; check `hooks.log` for `SessionStart` lines; `npx advise-cli doctor` must show all five hooks |
 | `quota exceeded` (429) | 30 lookups a minute or 500 pushed turns a day per device; it resets by itself |
-| first call takes a minute | the database wakes from idle; later calls take a few seconds |
+| first call takes a minute, or the first prompt after a break has no pointer | the database wakes from idle (about 15 idle minutes put it to sleep); that first lookup times out quietly and the next one works. Known and accepted for the beta |
 | `advise: command not found` | the short name needs `npm i -g advise-cli`; otherwise use `npx advise-cli …` |
 | memory off for one session | start Claude Code with `ADVISE_MODE=local` in the environment (PowerShell: `$env:ADVISE_MODE="local"; claude`) |
 
@@ -193,6 +195,7 @@ Full statement: <https://daat-mind.com/advise/privacy>.
 | the pointer, for any agent | `npx advise-cli brief "<task prompt>"` |
 | prior fixes for an error | `npx advise-cli lookup "<error text>" --remote` |
 | config and reachability | `npx advise-cli status` |
+| a bug report bundle, nothing private in it | `npx advise-cli report` |
 | delete everything you pushed | `npx advise-cli erase --me` |
 
 Pin a version with `npx advise-cli@0.2.2 …`; `@latest` is what you want day to day. With `npm i -g advise-cli`, drop
