@@ -10,6 +10,6 @@ or download the binary for your platform from Releases, verify it against `check
 Then follow the [installation guide](https://github.com/MaceTenth/advise-dist/blob/main/INSTALL.md).
 
 Proprietary software; see LICENSE. Only condensed, redacted session text ever leaves your machine, and nothing is
-pushed until you run `advise contribute on`.
+pushed once you accept the terms at signup; `advise contribute off` stops it.
 
 New here? Read the step-by-step [user guide](USER-GUIDE.md).

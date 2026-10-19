@@ -37,14 +37,18 @@ never your repositories.
 - `Access requested as <you>` → you are not approved yet. Nothing else happens; run `signup` again once the operator
   confirms your seat.
 
-## Step 2 · Turn contribution on
+## Step 2 · Contribution is on; here is the switch
+
+Accepting the terms in step 1 turned contribution on: from now on, finished Claude Code turns with tool work are pushed to
+your memory. That is the default because memory only exists if sessions are contributed. Two things to know:
 
 ```
-npx advise-cli contribute on
+npx advise-cli contribute off     # stop uploads at any time; briefs and lookups keep working
+npx advise-cli contribute on      # resume
 ```
 
-Until this, nothing ever leaves your machine. `npx advise-cli contribute off` stops uploads at any time; briefs and lookups keep
-working from what is already there.
+Turn it off before working in a project whose sessions you are not allowed to share, and back on afterwards.
+`npx advise-cli contribute status` shows the current state.
 
 ## Step 3 · Wire it into Claude Code
 
@@ -61,7 +65,7 @@ it). `doctor` then checks the whole path. Read it like this:
 | `config … tenant=u/<you>` | signed in |
 | `API reachable` | the service answers; the first call after an idle hour can take up to a minute while the database wakes |
 | five `hook` lines `on`/`True` | push, project brief, prompt pointer, recall on failures, recall feedback |
-| `contributing: on` | step 2 done |
+| `contributing: on (default…)` | uploads are on; `off` only if you turned them off |
 | `nothing pushed yet` | normal on day one: pushes happen when sessions end (see step 4) |
 | `live lookup works (0 hits)` | normal on day one: your tenant is empty until something is pushed |
 | `Claude Code 2.1.x` | version is fine |
@@ -160,7 +164,7 @@ Everyone in the tenant sees the tenant's memory, attributed by user.
 - What is stored: condensed, redacted turns (90 days, then deleted automatically); the trajectories, cards and briefs
   derived from them; token usage and timing; what memory showed you and whether it helped.
 - Where: the operator's AWS account, encrypted at rest and in transit, in your tenant only.
-- `npx advise-cli contribute off` stops uploads. `npx advise-cli erase --me` deletes everything you contributed and rebuilds shared cards
+- Contribution is on from the moment you accept the terms; `npx advise-cli contribute off` stops uploads. `npx advise-cli erase --me` deletes everything you contributed and rebuilds shared cards
   without it; this cannot be undone. Revoking the app on GitHub ends sign-in but does not delete memory.
 - Redaction is pattern-based. Do not enable contribution in projects whose sessions you are not allowed to share.
 
@@ -187,7 +191,7 @@ Found something broken? `npx advise-cli report` prints a bundle with everything 
 | what you want | command |
 |---|---|
 | join with GitHub | `npx advise-cli@latest signup` |
-| consent switch | `npx advise-cli contribute on` · `off` · `status` |
+| pause or resume uploads | `npx advise-cli contribute off` · `on` · `status` (on by default) |
 | wire Claude Code hooks | `npx advise-cli install` (`--no-recall`, `--no-prompt-brief`, `--uninstall`) |
 | check the whole path | `npx advise-cli doctor` |
 | upload history | `npx advise-cli push --dry-run`, then `npx advise-cli push` (`--all` for every turn) |

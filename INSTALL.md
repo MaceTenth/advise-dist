@@ -46,9 +46,9 @@ advise register --api https://<api-id>.execute-api.<region>.amazonaws.com --invi
 ```
 The invite is single-use and bound to the team's tenant.
 
-## 3 · Consent, then push your history (optional, recommended)
+## 3 · Push your history (optional, recommended)
 ```bash
-advise contribute on      # consent switch; until this is on, nothing is ever pushed (unset means off)
+advise contribute status  # on by default once you accepted the terms; `advise contribute off` stops uploads at any time
 advise push --dry-run     # shows what would be uploaded: condensed, redacted turns; never raw transcripts
 advise push               # interesting turns only (tool errors or 6+ tool calls); add --all for everything
 ```
